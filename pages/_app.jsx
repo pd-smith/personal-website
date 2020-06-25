@@ -18,10 +18,6 @@ function App({ Component, pageProps }) {
                 />
             </Head>
             <Header />
-            <div
-                className="bg-red-300 bg-blue-300 bg-yellow-300 bg-purple-300"
-                style={{ display: 'none' }}
-            />
             <main className="mt-24">
                 <Component {...pageProps} />
             </main>
