@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PersonTag from './PersonTag';
 import Section from '../Section';
+import Transition from '../Transition';
 
 export default function People() {
     const [people, setPeople] = useState([]);
@@ -15,11 +16,16 @@ export default function People() {
         getPeople();
     }, []);
     return (
-        <Section color="red" name="Cool People">
-            <div className="flex flex-wrap justify-around">
-                {people &&
-                    people.map((peopleProps) => <PersonTag {...peopleProps} />)}
-            </div>
-        </Section>
+        <>
+            <Section color="red" name="Cool People">
+                <div className="flex flex-wrap justify-around">
+                    {people &&
+                        people.map((peopleProps) => (
+                            <PersonTag {...peopleProps} />
+                        ))}
+                </div>
+            </Section>
+            <Transition firstColor="#fc8181" secondColor="#f6e05e" />
+        </>
     );
 }

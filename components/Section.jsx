@@ -16,7 +16,7 @@ function getClass(color) {
 }
 export default function Section({ children, color, name }) {
     return (
-        <section className={`${getClass(color)} py-5 min-h-screen h-full`}>
+        <section className={`${getClass(color)} py-5 h-full`}>
             {name && (
                 <h1 className="text-white text-4xl font-light text-center text-center m-5">
                     {name.toUpperCase()}
