@@ -1,38 +1,35 @@
 module.exports = {
-    settings: {
-        react: {
-            version: 'detect',
-        },
-    },
-    env: {
-        browser: true,
-        jest: true,
-        es6: true,
-    },
-    plugins: ['import', 'prettier', 'react'],
-    extends: ['eslint:recommended', 'plugin:react/recommended', 'prettier'],
-    parserOptions: {
-        ecmaVersion: 2020,
-        sourceType: 'module',
-        allowImportExportEverywhere: true,
-    },
+    extends: [
+        'eslint:recommended',
+        'plugin:@typescript-eslint/recommended',
+        'plugin:react/recommended',
+        'plugin:react-hooks/recommended',
+        'plugin:jsx-a11y/recommended',
+    ],
+    root: true,
+    parser: '@typescript-eslint/parser',
+    settings: { react: { version: 'detect' } },
+    plugins: ['prettier'],
     rules: {
         'prettier/prettier': 'error',
-        'no-console': 'warn',
-        'no-eval': 'error',
-        'import/first': 'error',
-    },
-    overrides: [
-        {
-            files: [
-                '.eslintrc.js',
-                'next.config.js',
-                'tailwind.config.js',
-                'postcss.config.js',
-            ],
-            env: {
-                node: true,
+        'react/prop-types': 'off',
+
+        // No need to import React when using Next.js
+        'react/react-in-jsx-scope': 'off',
+
+        // This rule is not compatible with Next.js's <Link /> components
+        'jsx-a11y/anchor-is-valid': 'off',
+
+        // Why would you want unused vars?
+        '@typescript-eslint/no-unused-vars': ['error'],
+
+        // I suggest this setting for requiring return types on functions only where useful
+        '@typescript-eslint/explicit-function-return-type': [
+            'warn',
+            {
+                allowExpressions: true,
+                allowConciseArrowFunctionExpressionsStartingWithVoid: true,
             },
-        },
-    ],
+        ],
+    },
 };
