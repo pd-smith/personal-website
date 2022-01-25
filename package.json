@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "eslint ./{pages,components}/*.{js,jsx}",
     "start": "parcel src/index.html",
-    "build": "parcel build"
+    "build": "parcel build src/index.html"
   },
   "dependencies": {
     "@emotion/react": "^11.4.0",
