@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useStyleSystem } from '../system/StyleSystemProvider';
 
 type LinkProps = {
@@ -6,12 +6,24 @@ type LinkProps = {
     target?: '_self' | '_blank' | '_parent' | '_top';
 };
 
+function pickRandomColor(colors: string[]): string {
+    return colors[Math.floor(Math.random() * colors.length)];
+}
+
 function useStyledLink(): [string, string] {
     const system = useStyleSystem();
-    const color =
-        system.colors.link[
-            Math.floor(Math.random() * system.colors.link.length)
-        ];
+    const [color, setColor] = React.useState(
+        pickRandomColor(system.colors.link)
+    );
+    useEffect(() => {
+        const interval = setInterval(
+            () => setColor(() => pickRandomColor(system.colors.link)),
+            2500
+        );
+        return () => {
+            clearInterval(interval);
+        };
+    }, [system.colors.link]);
     return [system.size.link, color];
 }
 
@@ -33,7 +45,12 @@ export function Link({
             style={{
                 fontSize,
                 color,
-                ...(hover ? { fontWeight: 'bold', margin: '0 -.25rem' } : {}),
+                ...(hover
+                    ? {
+                          fontSize: '23px',
+                          fontWeight: 'bold',
+                      }
+                    : {}),
             }}
         >
             {children}

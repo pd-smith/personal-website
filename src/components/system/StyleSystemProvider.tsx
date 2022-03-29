@@ -25,9 +25,9 @@ const cassidoo = {
             'rgb(36, 208, 90)',
             'rgb(235, 72, 136)',
         ],
-        body: '#000',
-        heading: '#000',
-        background: '#FFF',
+        body: '#0B0A00',
+        heading: '#0B0A00',
+        background: '#F4F5FF',
     },
     size: {
         link: '1.5rem',

@@ -51,12 +51,6 @@ export function Home(): JSX.Element {
                     }}
                 />
             </Flex>
-            {/* <button onClick={() => system.setTheme('cassidoo')}>
-                cassidoo
-            </button>
-            <button onClick={() => system.setTheme('cassidooDark')}>
-                cassidoo dark
-            </button> */}
         </HomeLayout>
     );
 }
