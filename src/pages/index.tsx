@@ -5,6 +5,7 @@ import { HomeLayout } from '../components/Home/HomeLayout';
 import Flex from '../components/shared/Flex';
 import { Link } from '../components/shared/Link';
 import image from '../profile.jpg';
+import { Holographic } from '../components/shared/Holographic';
 
 export function Home(): JSX.Element {
     return (
@@ -41,15 +42,23 @@ export function Home(): JSX.Element {
             </Body>
 
             <Flex direction="row" justifyContent="flex-end">
-                <img
-                    src={image}
-                    alt="me and my nephew"
+                <Holographic
                     style={{
                         height: '16rem',
                         width: '16rem',
                         borderRadius: '50%',
                     }}
-                />
+                >
+                    <img
+                        src={image}
+                        alt="me and my nephew"
+                        style={{
+                            height: '16rem',
+                            width: '16rem',
+                            borderRadius: '50%',
+                        }}
+                    />
+                </Holographic>
             </Flex>
         </HomeLayout>
     );
