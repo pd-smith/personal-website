@@ -1,0 +1,31 @@
+{
+  "name": "personal-website",
+  "description": "A static webapp site",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "clean": "rm -rf dist/ .turbo/ .parcel-cache/",
+    "lint": "TIMING=1 eslint \"src/**/*.ts*\" --fix",
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html"
+  },
+  "engines": {
+    "browsers": "> 0.25%"
+  },
+  "dependencies": {
+    "@internal/ds": "*",
+    "@tanstack/react-location": "^3.7.4",
+    "react": "*",
+    "react-dom": "*"
+  },
+  "devDependencies": {
+    "@internal/tsconfig": "*",
+    "@types/react": "*",
+    "eslint": "*",
+    "eslint-config-custom": "*",
+    "parcel": "^2.8.1",
+    "prettier": "*",
+    "process": "^0.11.10",
+    "typescript": "*"
+  }
+}
