@@ -30,7 +30,7 @@
     "eslint": "^*",
     "eslint-config-custom": "*",
     "react": "*",
-    "tsup": "^6.2.3",
+    "tsup": "^6.5.0",
     "typescript": "*"
   },
   "publishConfig": {

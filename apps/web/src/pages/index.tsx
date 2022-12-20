@@ -1,6 +1,12 @@
-import { Box, Link, Stack, Typography } from '@internal/ds';
-import { theme } from '../entry';
 import React from 'react';
+import {
+    Box,
+    Link,
+    Stack,
+    Typography,
+    theme,
+    type BoxProps,
+} from '@internal/ds';
 
 /**
  * TODO:
@@ -10,7 +16,7 @@ import React from 'react';
  * Figure out if too basic?
  */
 
-function Pill(props) {
+function Pill(props: BoxProps): JSX.Element {
     return (
         <Box
             display="flex"
@@ -27,7 +33,7 @@ export function Home(): JSX.Element {
     return (
         <Box
             alignContent="center"
-            padding={5}
+            padding={[1, 3, 5]}
             color="#29251a"
             bgcolor="black"
             height="100vh"

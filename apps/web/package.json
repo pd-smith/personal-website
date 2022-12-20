@@ -4,10 +4,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "clean": "rm -rf dist/ .turbo/ .parcel-cache/",
-    "lint": "TIMING=1 eslint \"src/**/*.ts*\" --fix",
-    "start": "parcel src/index.html",
-    "build": "parcel build src/index.html"
+    "start": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "lint": "TIMING=1 eslint \"src/**/*.ts\""
   },
   "engines": {
     "browsers": "> 0.25%"
@@ -21,11 +21,11 @@
   "devDependencies": {
     "@internal/tsconfig": "*",
     "@types/react": "*",
+    "@vitejs/plugin-react": "^3.0.0",
     "eslint": "*",
     "eslint-config-custom": "*",
-    "parcel": "^2.8.1",
+    "vite": "^4.0.2",
     "prettier": "*",
-    "process": "^0.11.10",
     "typescript": "*"
   }
 }

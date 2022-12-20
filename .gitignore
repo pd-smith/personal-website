@@ -27,3 +27,4 @@ yarn-error.log*
 .parcel-cache/
 dist/
 .turbo/
+tsconfig.tsbuildinfo
