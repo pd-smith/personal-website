@@ -6,6 +6,7 @@ import {
     Typography,
     theme,
     type BoxProps,
+    Paper,
 } from '@internal/ds';
 
 /**
@@ -35,21 +36,24 @@ export function Home(): JSX.Element {
             alignContent="center"
             padding={[1, 3, 5]}
             color="#29251a"
-            bgcolor="black"
             height="100vh"
             width="100vw"
         >
-            <Box
-                padding={2}
-                bgcolor="#fffbf0"
-                width="100%"
-                height="100%"
-                maxWidth="800px"
-                borderRadius="1px"
-                display="flex"
-                flexDirection="column"
-                justifyContent="space-between"
-                marginX="auto"
+            <Paper
+                sx={(theme) => ({
+                    padding: theme.spacing(2),
+                    width: '100%',
+                    height: '100%',
+                    maxWidth: '800px',
+                    borderRadius: '1px',
+                    display: 'flex',
+                    gap: theme.spacing(2),
+                    flexDirection: 'column',
+                    justifyContent: 'space-between',
+                    marginX: 'auto',
+                    boxShadow:
+                        '0px 7px 8px -4px rgb(255 255 255 / 20%), 0px 12px 17px 2px rgb(255 255 255 / 14%), 0px 5px 22px 4px rgb(255 255 255 / 12%);',
+                })}
             >
                 <Typography textAlign="center" variant="h1">
                     console logging is an efficient form of debugging
@@ -125,7 +129,7 @@ export function Home(): JSX.Element {
 
                     <Typography variant="h2">Pat S</Typography>
                 </Box>
-            </Box>
+            </Paper>
         </Box>
     );
 }
