@@ -21,10 +21,10 @@
   "devDependencies": {
     "@internal/tsconfig": "*",
     "@types/react": "*",
-    "@vitejs/plugin-react": "^3.0.0",
+    "@vitejs/plugin-react": "^3.0.1",
     "eslint": "*",
     "eslint-config-custom": "*",
-    "vite": "^4.0.2",
+    "vite": "^4.0.4",
     "prettier": "*",
     "typescript": "*"
   }
