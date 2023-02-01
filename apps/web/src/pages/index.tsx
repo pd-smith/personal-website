@@ -25,6 +25,7 @@ function Pill(props: BoxProps): JSX.Element {
             alignItems="center"
             height="calc(100% / 4)"
             borderRadius="125px"
+            minHeight="25px"
             {...props}
         />
     );
@@ -34,18 +35,19 @@ export function Home(): JSX.Element {
     return (
         <Box
             alignContent="center"
-            padding={[1, 3, 5]}
+            padding={{ xs: 0, sm: 1, md: 3, lg: 5 }}
             color="#29251a"
             height="100vh"
             width="100vw"
+            minHeight="600px"
         >
             <Paper
                 sx={(theme) => ({
-                    padding: theme.spacing(2),
+                    padding: theme.spacing(5),
                     width: '100%',
                     height: '100%',
                     maxWidth: '800px',
-                    borderRadius: '1px',
+                    borderRadius: '24px',
                     display: 'flex',
                     gap: theme.spacing(2),
                     flexDirection: 'column',
@@ -53,6 +55,10 @@ export function Home(): JSX.Element {
                     marginX: 'auto',
                     boxShadow:
                         '0px 7px 8px -4px rgb(255 255 255 / 20%), 0px 12px 17px 2px rgb(255 255 255 / 14%), 0px 5px 22px 4px rgb(255 255 255 / 12%);',
+                    [theme.breakpoints.down('md')]: {
+                        borderRadius: 0,
+                        padding: theme.spacing(2),
+                    },
                 })}
             >
                 <Typography textAlign="center" variant="h1">
