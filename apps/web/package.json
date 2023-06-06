@@ -24,7 +24,7 @@
     "@vitejs/plugin-react": "^3.0.1",
     "eslint": "*",
     "eslint-config-custom": "*",
-    "vite": "^4.0.4",
+    "vite": "^4.0.5",
     "prettier": "*",
     "typescript": "*"
   }
