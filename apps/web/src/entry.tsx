@@ -1,17 +1,16 @@
-import { CssBaseline, ThemeProvider, theme } from '@internal/ds';
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import AppRouter from './router';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { Home } from './pages';
+import './index.css';
 
-function AppEntry(): JSX.Element {
-    return (
-        <ThemeProvider theme={theme}>
-            <CssBaseline />
-            <AppRouter />
-        </ThemeProvider>
-    );
-}
+const router = createBrowserRouter([
+    {
+        path: '/',
+        element: <Home />,
+    },
+]);
 
 const container = document.getElementById('app');
 const root = createRoot(container!);
-root.render(<AppEntry />);
+root.render(<RouterProvider router={router} />);

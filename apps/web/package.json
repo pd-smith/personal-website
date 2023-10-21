@@ -4,27 +4,28 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "prepare": "panda codegen",
     "start": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "lint": "TIMING=1 eslint \"src/**/*.ts\""
+    "lint": "eslint \"src/**/*.ts\""
   },
   "engines": {
     "browsers": "> 0.25%"
   },
   "dependencies": {
-    "@internal/ds": "*",
-    "@tanstack/react-location": "^3.7.4",
+    "react-router-dom": "^6.17.0",
     "react": "*",
     "react-dom": "*"
   },
   "devDependencies": {
     "@internal/tsconfig": "*",
+    "@pandacss/dev": "^0.17.0",
     "@types/react": "*",
-    "@vitejs/plugin-react": "^3.0.1",
+    "@vitejs/plugin-react": "4.1.0",
     "eslint": "*",
     "eslint-config-custom": "*",
-    "vite": "^4.0.4",
+    "vite": "^4.5.0",
     "prettier": "*",
     "typescript": "*"
   }
