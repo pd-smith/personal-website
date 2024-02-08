@@ -1,1 +1,41 @@
-@layer reset, base, tokens, recipes, utilities;
+
+:root {
+    --theme-text-primary: #0b2621;
+    --theme-bg-default: #F2E1C3;
+    --theme-primary-main: #D37F7F;
+    --theme-secondary-main: #54A498;
+    --theme-tertiary-main: #874537;
+    --theme-accent: #105446;
+}
+* {
+    color: var(--theme-text-primary);
+    background-color: var(--theme-bg-default);
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+.card {
+    margin: 0 auto;
+    width: 80%;
+    max-width: 800px;
+    border: 1px solid black;
+    margin-bottom: .5rem;
+    h2 {
+        padding: 1rem .5rem;
+        font-size: 1.25rem;
+        border-bottom: 1px solid black;
+    }
+    img {
+        width: 100%;
+    }
+    div {
+        padding: .5rem;
+    }
+    ul {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        list-style-type: none;
+    }
+}
