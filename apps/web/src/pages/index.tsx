@@ -4,13 +4,16 @@ import React from 'react';
 export function Home() {
     return (
         <>
-            <h1>Hey, I'm Pat</h1>
+            <h1>👋 Hey, I'm Pat</h1>
             <section className="card">
-                <h2>Here is my dog</h2>
-                <img alt="Miss Ollie" src="/ollie.png"></img>
+                <h2>💤 Here is my dog</h2>
+                <img
+                    alt="Miss Ollie the corgi sleeping on the couch, belly up"
+                    src="/ollie.png"
+                ></img>
             </section>
             <section className="card">
-                <h2>Here are my socials</h2>
+                <h2>💻 Here are my socials</h2>
                 <ul>
                     <li>
                         <a
