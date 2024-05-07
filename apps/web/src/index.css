@@ -16,6 +16,7 @@ body {
     background: linear-gradient(0deg, rgba(242,225,195,1) 0%, rgba(255,255,255,1) 100%);
     color: var(--theme-text-primary);
     max-width: 1200px;
+    min-height: 100vh;
     margin: 0 auto 2rem;
 }
 
@@ -118,7 +119,7 @@ p {
 
 @media (max-width: 600px) {
     h1 {
-        font-size: 4rem;
+        font-size: 3rem;
     }
     
     h2 {
