@@ -1,31 +1,53 @@
-import React from 'react';
+/* eslint-disable react/no-unescaped-entities */
+import React, { useState } from 'react';
 
 // This 10000% shouldn't be in react at this point, so I'll consider refactoring after getting the visuals I want
 // While you're at it, go ahead and clean up that ugly css
-export function Home() {
+
+const OLLIE_PICS = [
+    {
+        src: '/ollie_2.jpg',
+        alt: 'Miss Ollie the corgi getting ready for bed with her piggy: Petey',
+    },
+    {
+        src: '/ollie_tito.jpg',
+        alt: 'Miss Ollie the corgi and her cousin Tito the French Bulldog in the back of the car',
+    },
+    {
+        src: '/baby_ollie.jpg',
+        alt: 'Miss Ollie as a puppy after her first swim',
+    },
+];
+
+export function Home(): JSX.Element {
+    const [picIndex, setPicIndex] = useState(0);
+    const currentPic = OLLIE_PICS[picIndex];
+    function nextPic(): void {
+        const nextIndex = picIndex + 1;
+        if (nextIndex >= OLLIE_PICS.length) {
+            setPicIndex(0);
+        } else {
+            setPicIndex(nextIndex);
+        }
+    }
     return (
         <main>
             <h1 className="cartoon-border">
-                👋 <b>Hey, I'm Pat</b>
+                <span className="blocky-text">Hey, I'm Pat</span>
             </h1>
             <section className="card cartoon-border">
-                <h2>
-                    💤 <b>Here is my dog</b>
-                </h2>
-                <img
-                    alt="Miss Ollie the corgi sleeping on the couch, belly up"
-                    src="/ollie.png"
-                ></img>
-                <button className="exclaim-wrap cartoon-border halftone">
+                {/*eslint-disable-next-line jsx-a11y/alt-text*/}
+                <img {...currentPic}></img>
+                <button
+                    onClick={nextPic}
+                    className="exclaim-wrap cartoon-border halftone"
+                >
                     <hr className="exclaim cartoon-border" />
                     <hr className="exclaim cartoon-border" />
                     <hr className="exclaim cartoon-border" />
                 </button>
             </section>
             <section className="card cartoon-border">
-                <h2>
-                    💻 <b>Here are my socials</b>
-                </h2>
                 <ul>
                     <li>
                         <a
