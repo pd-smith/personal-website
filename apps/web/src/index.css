@@ -175,7 +175,8 @@ p {
     }
 
     body {
-        padding: 1.5rem 1rem;
+        padding: 1.5rem;
+        margin-left: -.5rem;
     }
     
    
