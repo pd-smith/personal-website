@@ -19,7 +19,7 @@ const OLLIE_PICS = [
     },
 ];
 
-export function Home(): JSX.Element {
+export default function Home(): JSX.Element {
     const [picIndex, setPicIndex] = useState(0);
     const currentPic = OLLIE_PICS[picIndex];
     function nextPic(): void {
@@ -37,7 +37,7 @@ export function Home(): JSX.Element {
             </h1>
             <section className="card cartoon-border">
                 {/*eslint-disable-next-line jsx-a11y/alt-text*/}
-                <img {...currentPic}></img>
+                <img {...currentPic} loading="lazy"></img>
                 <button
                     onClick={nextPic}
                     className="exclaim-wrap cartoon-border halftone"
